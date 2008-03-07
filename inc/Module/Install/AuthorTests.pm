@@ -1,11 +1,12 @@
 #line 1
 package Module::Install::AuthorTests;
 
+use 5.005;
 use strict;
 use Module::Install::Base;
 use Carp ();
 
-#line 15
+#line 16
 
 use vars qw{$VERSION $ISCORE @ISA};
 BEGIN {
@@ -14,14 +15,14 @@ BEGIN {
   @ISA     = qw{Module::Install::Base};
 }
 
-#line 35
+#line 42
 
 sub author_tests {
   my ($self, @dirs) = @_;
   _add_author_tests($self, \@dirs, 0);
 }
 
-#line 49
+#line 56
 
 sub recursive_author_tests {
   my ($self, @dirs) = @_;
@@ -53,6 +54,6 @@ sub _add_author_tests {
   }
 }
 
-#line 100
+#line 107
 
 1;

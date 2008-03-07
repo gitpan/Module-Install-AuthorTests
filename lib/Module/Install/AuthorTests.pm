@@ -11,13 +11,13 @@ Module::Install::AuthorTests - designate tests only run by module authors
 
 =head1 VERSION
 
-0.001
+0.002
 
 =cut
 
 use vars qw{$VERSION $ISCORE @ISA};
 BEGIN {
-  $VERSION = '0.001';
+  $VERSION = '0.002';
   $ISCORE  = 1;
   @ISA     = qw{Module::Install::Base};
 }
@@ -32,6 +32,12 @@ This plugin adds the following Module::Install commands:
 
 This declares that the test files found in the directory F<./xt> should be run
 only if the module is being built by an author.  For an explanation, see below.
+
+You may declare multiple test directories by passing a list of tests.  Since
+tests are not recursive by default, it should be safe to use a subdirectory of
+F<./t> for author tests, like:
+
+  author_tests('t/author');
 
 =cut
 
